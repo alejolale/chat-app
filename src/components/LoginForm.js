@@ -3,7 +3,7 @@ import { VERIFY_USER } from '../Events';
 
 const LoginForm = ({socket, setNewUser, user}) => {
 
-    const [nickname, setNickname]= useState(null);
+    const [nickname, setNickname]= useState("");
     const [error, setError]= useState(null);
 
     const setUser = ({user, isUser}) => {
