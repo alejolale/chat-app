@@ -1,4 +1,4 @@
-const uuidv4= require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 const createUser= ({name=""} = {}) => (
     {
@@ -16,7 +16,7 @@ const createMessage = ({message="", sender=""} = { }) => (
     }
 )
 
-const createChat= ({messages= [], name="Community", users=[]} = { }) (
+const createChat= ({messages= [], name="Community", users=[] } = { }) => (
     {
         id: uuidv4(),
         name,
@@ -24,7 +24,7 @@ const createChat= ({messages= [], name="Community", users=[]} = { }) (
         users,
         typingUsers: []
     }
-)
+);
 
 const getTime = (date) => {
     return `${date.getHours()}:${("0"+date.getMinutes()).slice(-2)}`

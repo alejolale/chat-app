@@ -13,10 +13,14 @@ module.exports = function(socket) {
         if (isUser) {
             callback({ isUser: true, user: null});
         }else {
-            callback({isUser: false, user:createUser({name= nickname})});
-            //minute 42
-            //https://www.youtube.com/watch?v=84GXJANOYFw
+            callback({isUser: false, user:createUser({name: nickname})});
+            
         }
     });
     
 }
+
+
+
+//minute 42
+            //https://www.youtube.com/watch?v=84GXJANOYFw
