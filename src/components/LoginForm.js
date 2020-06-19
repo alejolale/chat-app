@@ -7,18 +7,22 @@ const LoginForm = ({socket, setNewUser, user}) => {
     const [error, setError]= useState(null);
 
     const setUser = ({user, isUser}) => {
+        console.log(user, isUser);
+        
         if (isUser) {
             setError('UserName Taken')
         }else {
+            setError(null)
             setNewUser(user);
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('aa');
+        console.log(`Into handle`);
         
-        socket.emit(VERIFY_USER, nickname, user);
+        
+        socket.emit(VERIFY_USER, nickname, setUser);
         
     };
 
